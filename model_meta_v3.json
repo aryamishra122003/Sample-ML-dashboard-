@@ -1,0 +1,53 @@
+{
+  "feature_cols": [
+    "business_age_yrs",
+    "cibil_score",
+    "num_overdue_accounts",
+    "num_active_loans",
+    "loan_ask_lakhs",
+    "revenue_lakhs",
+    "gst_seasonality_cv",
+    "net_profit_margin_pct",
+    "cash_profit_lakhs",
+    "debt_to_equity",
+    "loan_to_net_worth",
+    "avg_bank_balance_lakhs",
+    "num_emi_bounces",
+    "foir",
+    "cash_profit_to_loan"
+  ],
+  "label_order": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "n_classes": 3,
+  "test_accuracy": 0.717,
+  "cv_accuracy_mean": 0.721,
+  "cv_accuracy_std": 0.005,
+  "train_size": 8000,
+  "test_size": 2000,
+  "total_cases": 10000,
+  "feature_importance": {
+    "num_overdue_accounts": 0.1789,
+    "foir": 0.1241,
+    "cash_profit_to_loan": 0.1125,
+    "num_emi_bounces": 0.0999,
+    "cibil_score": 0.0638,
+    "business_age_yrs": 0.0498,
+    "loan_to_net_worth": 0.0461,
+    "avg_bank_balance_lakhs": 0.0451,
+    "loan_ask_lakhs": 0.044,
+    "debt_to_equity": 0.0439,
+    "gst_seasonality_cv": 0.04,
+    "net_profit_margin_pct": 0.04,
+    "cash_profit_lakhs": 0.0384,
+    "revenue_lakhs": 0.038,
+    "num_active_loans": 0.0354
+  },
+  "class_distribution": {
+    "Low": 6281,
+    "Medium": 2144,
+    "High": 1575
+  }
+}
