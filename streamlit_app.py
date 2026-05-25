@@ -60,11 +60,11 @@ with st.sidebar:
         count = meta["class_distribution"].get(cls, 0)
         st.write(f"{cls}: {count:,} ({count/meta['total_cases']*100:.1f}%)")
     st.markdown("---")
-    st.caption("XGBoost Classifier | Prototype v3 | SENP Business")
+    st.caption("XGBoost Classifier for SENP | V3")
 
 # Main
 st.markdown("## Godrej Capital ML Risk Classifier")
-st.markdown("Self-Employed Non-Professional cases, Light Underwriting stage")
+st.markdown("Demo for SENP Cases at LU")
 st.markdown("---")
 
 tab1, tab2 = st.tabs(["Classify a Case", "Training Data"])
@@ -73,7 +73,7 @@ with tab1:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown("**Credit History **")
+        st.markdown("Credit History")
         business_age_yrs = st.number_input("Business Vintage (years)", 1, 40, 10)
         cibil_score = st.number_input("CIBIL Score", 300, 900, 720)
         num_overdue_accounts = st.number_input("Overdue Accounts", 0, 10, 0)
