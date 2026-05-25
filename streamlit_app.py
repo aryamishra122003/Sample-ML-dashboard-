@@ -4,7 +4,7 @@ import numpy as np
 import xgboost as xgb
 import json
 
-st.set_page_config(page_title="Godrej Capital | Prime LAP Risk Classifier", layout="wide")
+st.set_page_config(page_title="Godrej Capital ML Risk Classifier", layout="wide")
 
 @st.cache_resource
 def load_model():
@@ -63,7 +63,7 @@ with st.sidebar:
     st.caption("XGBoost Classifier | Prototype v3 | SENP Business")
 
 # Main
-st.markdown("## Godrej Capital | Prime LAP Risk Classifier")
+st.markdown("## Godrej Capital ML Risk Classifier")
 st.markdown("Self-Employed Non-Professional cases, Light Underwriting stage")
 st.markdown("---")
 
@@ -73,14 +73,14 @@ with tab1:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown("**Demographics and Credit History**")
+        st.markdown("**Credit History **")
         business_age_yrs = st.number_input("Business Vintage (years)", 1, 40, 10)
         cibil_score = st.number_input("CIBIL Score", 300, 900, 720)
         num_overdue_accounts = st.number_input("Overdue Accounts", 0, 10, 0)
         num_active_loans = st.number_input("Active Loans", 0, 15, 2)
 
     with col2:
-        st.markdown("**Loan and GST**")
+        st.markdown("**GST and other**")
         loan_ask_lakhs = st.number_input("Loan Ask (Rs Lakhs)", 10.0, 1500.0, 120.0, step=10.0)
         revenue_lakhs = st.number_input("Revenue (Rs Lakhs)", 0.0, 5000.0, 350.0, step=10.0)
         gst_seasonality_cv = st.number_input("GST Seasonality CV", 0.0, 1.0, 0.15, step=0.01,
@@ -89,7 +89,7 @@ with tab1:
         cash_profit_lakhs = st.number_input("Cash Profit (Rs Lakhs)", 0.0, 500.0, 60.0, step=5.0)
 
     with col3:
-        st.markdown("**Balance Sheet and Banking**")
+        st.markdown("**Financials and Banking**")
         debt_to_equity = st.number_input("Debt / Equity", 0.0, 10.0, 0.6, step=0.1)
         loan_to_net_worth = st.number_input("Loan / Net Worth", 0.0, 10.0, 0.48, step=0.05)
         avg_bank_balance_lakhs = st.number_input("Avg Bank Balance (Rs Lakhs)", 0.0, 500.0, 15.0, step=1.0)
@@ -203,7 +203,7 @@ with tab1:
 
 with tab2:
     st.markdown("**Synthetic Training Dataset: 10,000 SENP Business Cases**")
-    st.markdown(f"Columns: {len(df.columns)} | Rows: {len(df):,} | Approx 12% intentionally mislabeled | Approx 12% rows with missing values")
+    st.markdown(f"Columns: {len(df.columns)} | Rows: {len(df):,} | Trained on 12% misclassified or missing value cases")
 
     col_filter, _ = st.columns([1, 3])
     with col_filter:
